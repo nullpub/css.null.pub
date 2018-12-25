@@ -1,0 +1,38 @@
+{
+  "name": "css.null.pub",
+  "version": "1.0.0",
+  "description": "Documentation for @nll/css",
+  "private": true,
+  "scripts": {
+    "build": "npm run clean && npx parcel build src/index.html",
+    "clean": "rm -rf dist .cache",
+    "g:c": "schematics @nll/schematics-react:component",
+    "g:sc": "schematics @nll/schematics-react:stateless-component",
+    "start": "npx parcel src/index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nullpub/css.null.pub.git"
+  },
+  "author": "Brandon Blaylock (brandon@null.pub)",
+  "license": "MPL-2.0",
+  "bugs": {
+    "url": "https://github.com/nullpub/css.null.pub/issues"
+  },
+  "homepage": "https://github.com/nullpub/css.null.pub#readme",
+  "dependencies": {
+    "core-js": "^2.6.0",
+    "lodash": "^4.17.11",
+    "preact": "^8.4.2"
+  },
+  "devDependencies": {
+    "@nll/schematics-react": "0.1.2",
+    "@types/lodash": "^4.14.118",
+    "@types/node": "^10.12.10",
+    "parcel-bundler": "1.9.4",
+    "parcel-plugin-typescript": "^1.0.0",
+    "parcel-plugin-bundle-visualiser": "^1.2.0",
+    "typescript": "^3.1.6"
+  }
+}

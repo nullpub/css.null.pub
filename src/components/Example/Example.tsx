@@ -11,7 +11,9 @@ export interface ExampleProps {}
  * <Example>Hello World</Example>
  */
 export const Example: FunctionalComponent<ExampleProps> = ({ children }) => (
-  <pre class="doy-auto ff-monospace ct-dark pa-4 fsd-3 brtr-2 brbl-2">{children}</pre>
+  <section class="doa-auto ff-monospace ct-dark pa-4 fsd-3 brtr-2 brbl-2">
+    <pre>{children}</pre>
+  </section>
 );
 
 export default Example;

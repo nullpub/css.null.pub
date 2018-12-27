@@ -4,7 +4,7 @@ import './Section.css';
 
 export interface SectionProps {
   title: string;
-  subtitle: string;
+  subtitle?: string;
 }
 
 /**
@@ -17,7 +17,7 @@ export const Section: FunctionalComponent<SectionProps> = ({ title, subtitle, ch
   <section id={title.replace(/\s+/g, '')}>
     <header class="fld-row flg-4 flai-flex-end px-4">
       <h2>{title}</h2>
-      <small class="pb-2">{subtitle}</small>
+      {!!subtitle && <small class="pb-2">{subtitle}</small>}
       <p class="fls-1-1 pb-2 ta-right cf-link">
         <a href="#root">Top</a>
       </p>

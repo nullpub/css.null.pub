@@ -11,6 +11,7 @@ import ToDo from '~/components/ToDo';
 import Border from '~/components/Border';
 import Color from '~/components/Color';
 import Flex from '~/components/Flex';
+import Font from '~/components/Font';
 
 /**
 <section>Font</section>
@@ -37,6 +38,7 @@ export const Main: FunctionalComponent<any> = () => (
     <Border />
     <Color />
     <Flex />
+    <Font />
     <ToDo />
   </article>
 );

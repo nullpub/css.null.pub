@@ -9,16 +9,16 @@ import Reset from '~/components/Reset';
 import Variables from '~/components/Variables';
 import ToDo from '~/components/ToDo';
 import Border from '~/components/Border';
+import Color from '~/components/Color';
+import Flex from '~/components/Flex';
 
 /**
-<section>Border</section>
-<section>Color</section>
-<section>Flex</section>
 <section>Font</section>
 <section>Margin</section>
 <section>Padding</section>
 <section>Shadow</section>
 <section>Text</section>
+<section>Display</section>
  */
 
 /**
@@ -35,6 +35,8 @@ export const Main: FunctionalComponent<any> = () => (
     <Reset />
     <Variables />
     <Border />
+    <Color />
+    <Flex />
     <ToDo />
   </article>
 );

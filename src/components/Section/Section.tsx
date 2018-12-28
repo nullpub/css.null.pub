@@ -22,7 +22,7 @@ export const Section: FunctionalComponent<SectionProps> = ({ title, subtitle, ch
         <a href="#root">Top</a>
       </p>
     </header>
-    <section class="fld-column flg-5 pa-4 ct-light bra-2 sh-1">{children}</section>
+    <section class="fld-column flg-6 pa-4 ct-light bra-2 sh-1">{children}</section>
   </section>
 );
 

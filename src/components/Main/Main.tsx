@@ -28,7 +28,7 @@ import Future from '~/components/Future';
  * <Main text="Hello World" />
  */
 export const Main: FunctionalComponent<any> = () => (
-  <article class="main-page pa-4 fld-column flg-5 mb-20p">
+  <article class="main-page pa-4 fld-column flg-6 mb-20p">
     <Introduction />
     <TableOfContents />
     <Usage />

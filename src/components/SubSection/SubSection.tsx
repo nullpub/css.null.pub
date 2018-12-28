@@ -15,10 +15,10 @@ export interface SubSectionProps {
  */
 export const SubSection: FunctionalComponent<SubSectionProps> = ({ title, subtitle, children }) => (
   <section>
-    <h5>
+    <h5 class="pb-4">
       {title} {!!subtitle && <span class="fsd-3 fwd-1">{subtitle}</span>}
     </h5>
-    <section class="fld-column flg-4">{children}</section>
+    <section class="fld-column flg-5">{children}</section>
   </section>
 );
 

@@ -18,13 +18,28 @@ export const Flex: FunctionalComponent<FlexProps> = () => (
   <Section title="Flex" subtitle="Clean flex atomic classes">
     <SubSection title="Basic Use">
       <p>
-        Flexbox is an incredibly powerful tool for layout. It's also supported by virtually all available browsers
-        (aside from ie9). Rather than get right into it with the details of these classes, it seems more appropriate to
-        give some examples of what a good api for flexbox can do. To start, create a parent container and set a flex
-        direction with a .fld class and then set a flex gap with a .flg class. Then, set .fls classes on the child
-        containers.
+        Flexbox is an incredibly powerful tool for layout, much more powerful than any grid system (but not as powerful
+        as css grid). It's also supported by virtually all available browsers (aside from ie9). Grid systems by design
+        must fall short when it comes to responsive design due to their reliance on css hacks to achieve clean reflow.
+        Thus, this library focuses on providing a well thought out flexbox api in lieu of a grid system.
       </p>
-      <ExampleContainer title=".fld-row.flg-4">
+      <p>
+        Anything that can be achieved with a grid system can be achieved with flexbox, the only difference is that the
+        flexbox api was built to service the needs of responsive design without relying on floats, clearfixes, and
+        deeply nested css classes. Following are a few examples of the primary use cases of a grid system as they would
+        be handled by flex.
+      </p>
+      <p>
+        Compare the following examples with those found{' '}
+        <a href="https://tachyons.io/docs/layout/grid/">in tachyons grid examples</a> and{' '}
+        <a href="https://getbootstrap.com/docs/4.2/layout/grid/">Bootstrap's grid</a>. Notice the need for container
+        elements, row elements, and manually setting margins to achieve gutters. In particular, a good flex api allows
+        you to control both the growth behaviours (when there is enough space to fit all of your content), and shrink
+        behaviours (which elements should give up space first) which standard grid systems don't. If you are new to flex
+        I recommend checking out <a href="https://flexboxfroggy.com/">Flexbox Froggy</a> to get up to speed or just copy
+        paste from the examples below.
+      </p>
+      <ExampleContainer title=".fld-row.flg-4 - 10% 20% 30% 40%">
         <section class="fld-row flg-4">
           <div class="bwa-1 pa-2 fls-1-1">.fls-1-1</div>
           <div class="bwa-1 pa-2 fls-2-1">.fls-2-1</div>
@@ -41,11 +56,11 @@ export const Flex: FunctionalComponent<FlexProps> = () => (
 </section>`}
       </Example>
 
-      <ExampleContainer title=".fld-row.flg-2">
+      <ExampleContainer title=".fld-row.flg-2 - 10% 40% 40% 10%">
         <section class="fld-row flg-2">
           <div class="bwa-1 pa-2 fls-1-1">.fls-1-1</div>
-          <div class="bwa-1 pa-2 fls-5-1">.fls-5-1</div>
-          <div class="bwa-1 pa-2 fls-5-1">.fls-5-1</div>
+          <div class="bwa-1 pa-2 fls-5-1">.fls-4-1</div>
+          <div class="bwa-1 pa-2 fls-5-1">.fls-4-1</div>
           <div class="bwa-1 pa-2 fls-1-1">.fls-1-1</div>
         </section>
       </ExampleContainer>
@@ -57,7 +72,7 @@ export const Flex: FunctionalComponent<FlexProps> = () => (
   <div class="fls-1-1">.fls-1-1</div>
 </section>`}
       </Example>
-      <ExampleContainer title=".fld-row.flg-7">
+      <ExampleContainer title=".fld-row.flg-7 - content-width remaining space">
         <section class="fld-row flg-7">
           <div class="bwa-1 pa-2 fls-0-0">.fls-0-0</div>
           <div class="bwa-1 pa-2 fls-1-1">.fls-1-1</div>
@@ -75,99 +90,100 @@ export const Flex: FunctionalComponent<FlexProps> = () => (
       <p>The flex direction classes set flex-direction and display: flex on the attached class.</p>
       <ExampleContainer title=".fld-row.flg-4">
         <section class="fld-row flg-4">
-          <div class="bwa-1 pa-2 fls-1-1">One</div>
-          <div class="bwa-1 pa-2 fls-1-1">Two</div>
-          <div class="bwa-1 pa-2 fls-1-1">Three</div>
-          <div class="bwa-1 pa-2 fls-1-1">Four</div>
+          <div class="bwa-1 pa-2 fls-1-1">1 : .fls-1-1</div>
+          <div class="bwa-1 pa-2 fls-1-1">2 : .fls-1-1</div>
+          <div class="bwa-1 pa-2 fls-1-1">3 : .fls-1-1</div>
+          <div class="bwa-1 pa-2 fls-1-1">4 : .fls-1-1</div>
         </section>
       </ExampleContainer>
       <ExampleContainer title=".fld-row-reverse.flg-4">
         <section class="fld-row-reverse flg-4">
-          <div class="bwa-1 pa-2 fls-1-1">One</div>
-          <div class="bwa-1 pa-2 fls-1-1">Two</div>
-          <div class="bwa-1 pa-2 fls-1-1">Three</div>
-          <div class="bwa-1 pa-2 fls-1-1">Four</div>
+          <div class="bwa-1 pa-2 fls-1-1">1 : .fls-1-1</div>
+          <div class="bwa-1 pa-2 fls-1-1">2 : .fls-1-1</div>
+          <div class="bwa-1 pa-2 fls-1-1">3 : .fls-1-1</div>
+          <div class="bwa-1 pa-2 fls-1-1">4 : .fls-1-1</div>
         </section>
       </ExampleContainer>
       <ExampleContainer title=".fld-column.flg-4">
         <section class="fld-column flg-4">
-          <div class="bwa-1 pa-2 fls-1-1">One</div>
-          <div class="bwa-1 pa-2 fls-1-1">Two</div>
-          <div class="bwa-1 pa-2 fls-1-1">Three</div>
-          <div class="bwa-1 pa-2 fls-1-1">Four</div>
+          <div class="bwa-1 pa-2 fls-1-1">1 : .fls-1-1</div>
+          <div class="bwa-1 pa-2 fls-1-1">2 : .fls-1-1</div>
+          <div class="bwa-1 pa-2 fls-1-1">3 : .fls-1-1</div>
+          <div class="bwa-1 pa-2 fls-1-1">4 : .fls-1-1</div>
         </section>
       </ExampleContainer>
       <ExampleContainer title=".fld-column-reverse.flg-4">
         <section class="fld-column-reverse flg-4">
-          <div class="bwa-1 pa-2 fls-1-1">One</div>
-          <div class="bwa-1 pa-2 fls-1-1">Two</div>
-          <div class="bwa-1 pa-2 fls-1-1">Three</div>
-          <div class="bwa-1 pa-2 fls-1-1">Four</div>
+          <div class="bwa-1 pa-2 fls-1-1">1 : .fls-1-1</div>
+          <div class="bwa-1 pa-2 fls-1-1">2 : .fls-1-1</div>
+          <div class="bwa-1 pa-2 fls-1-1">3 : .fls-1-1</div>
+          <div class="bwa-1 pa-2 fls-1-1">4 : .fls-1-1</div>
         </section>
       </ExampleContainer>
     </SubSection>
 
     <SubSection title="Flex Gap" subtitle=".flg">
       <p>
-        Flex gap classes set the gap size (margin) inbetween child elements. The flex gaps use the same fill sizing as
-        margin, since that the property that is being set. Additionally, the gap always lies along the major flex axis.
-        Unfortunately, flex gaps do not respect direction: ltr for fld-row and fld-row-reverse. This is beyond the
-        ability of css to handle. Flex gaps can range from steps 0 to 7.
+        Flex gap classes set the gap size (margin) inbetween child elements, exactly like the grid-gap property for grid
+        layout. The flex gaps use the same fill sizing as margin, since that the property that is being set.
+        Additionally, the gap always lies along the major flex axis. Unfortunately, flex gaps do not respect direction:
+        ltr for fld-row and fld-row-reverse. This is beyond the ability of css to handle. Flex gaps can range from steps
+        0 to 7.
       </p>
       <ExampleContainer title=".fld-row.flg-0">
         <section class="fld-row flg-0">
-          <div class="bwa-1 pa-2 fls-1-1">One</div>
-          <div class="bwa-1 pa-2 fls-1-1">Two</div>
-          <div class="bwa-1 pa-2 fls-1-1">Three</div>
+          <div class="bwa-1 pa-2 fls-1-1">.fls-1-1</div>
+          <div class="bwa-1 pa-2 fls-1-1">.fls-1-1</div>
+          <div class="bwa-1 pa-2 fls-1-1">.fls-1-1</div>
         </section>
       </ExampleContainer>
       <ExampleContainer title=".fld-row.flg-1">
         <section class="fld-row flg-1">
-          <div class="bwa-1 pa-2 fls-1-1">One</div>
-          <div class="bwa-1 pa-2 fls-1-1">Two</div>
-          <div class="bwa-1 pa-2 fls-1-1">Three</div>
+          <div class="bwa-1 pa-2 fls-1-1">.fls-1-1</div>
+          <div class="bwa-1 pa-2 fls-1-1">.fls-1-1</div>
+          <div class="bwa-1 pa-2 fls-1-1">.fls-1-1</div>
         </section>
       </ExampleContainer>
       <ExampleContainer title=".fld-row.flg-2">
         <section class="fld-row flg-2">
-          <div class="bwa-1 pa-2 fls-1-1">One</div>
-          <div class="bwa-1 pa-2 fls-1-1">Two</div>
-          <div class="bwa-1 pa-2 fls-1-1">Three</div>
+          <div class="bwa-1 pa-2 fls-1-1">.fls-1-1</div>
+          <div class="bwa-1 pa-2 fls-1-1">.fls-1-1</div>
+          <div class="bwa-1 pa-2 fls-1-1">.fls-1-1</div>
         </section>
       </ExampleContainer>
       <ExampleContainer title=".fld-row.flg-3">
         <section class="fld-row flg-3">
-          <div class="bwa-1 pa-2 fls-1-1">One</div>
-          <div class="bwa-1 pa-2 fls-1-1">Two</div>
-          <div class="bwa-1 pa-2 fls-1-1">Three</div>
+          <div class="bwa-1 pa-2 fls-1-1">.fls-1-1</div>
+          <div class="bwa-1 pa-2 fls-1-1">.fls-1-1</div>
+          <div class="bwa-1 pa-2 fls-1-1">.fls-1-1</div>
         </section>
       </ExampleContainer>
       <ExampleContainer title=".fld-row.flg-4">
         <section class="fld-row flg-4">
-          <div class="bwa-1 pa-2 fls-1-1">One</div>
-          <div class="bwa-1 pa-2 fls-1-1">Two</div>
-          <div class="bwa-1 pa-2 fls-1-1">Three</div>
+          <div class="bwa-1 pa-2 fls-1-1">.fls-1-1</div>
+          <div class="bwa-1 pa-2 fls-1-1">.fls-1-1</div>
+          <div class="bwa-1 pa-2 fls-1-1">.fls-1-1</div>
         </section>
       </ExampleContainer>
       <ExampleContainer title=".fld-row.flg-5">
         <section class="fld-row flg-5">
-          <div class="bwa-1 pa-2 fls-1-1">One</div>
-          <div class="bwa-1 pa-2 fls-1-1">Two</div>
-          <div class="bwa-1 pa-2 fls-1-1">Three</div>
+          <div class="bwa-1 pa-2 fls-1-1">.fls-1-1</div>
+          <div class="bwa-1 pa-2 fls-1-1">.fls-1-1</div>
+          <div class="bwa-1 pa-2 fls-1-1">.fls-1-1</div>
         </section>
       </ExampleContainer>
       <ExampleContainer title=".fld-row.flg-6">
         <section class="fld-row flg-6">
-          <div class="bwa-1 pa-2 fls-1-1">One</div>
-          <div class="bwa-1 pa-2 fls-1-1">Two</div>
-          <div class="bwa-1 pa-2 fls-1-1">Three</div>
+          <div class="bwa-1 pa-2 fls-1-1">.fls-1-1</div>
+          <div class="bwa-1 pa-2 fls-1-1">.fls-1-1</div>
+          <div class="bwa-1 pa-2 fls-1-1">.fls-1-1</div>
         </section>
       </ExampleContainer>
       <ExampleContainer title=".fld-row.flg-7">
         <section class="fld-row flg-7">
-          <div class="bwa-1 pa-2 fls-1-1">One</div>
-          <div class="bwa-1 pa-2 fls-1-1">Two</div>
-          <div class="bwa-1 pa-2 fls-1-1">Three</div>
+          <div class="bwa-1 pa-2 fls-1-1">.fls-1-1</div>
+          <div class="bwa-1 pa-2 fls-1-1">.fls-1-1</div>
+          <div class="bwa-1 pa-2 fls-1-1">.fls-1-1</div>
         </section>
       </ExampleContainer>
     </SubSection>
@@ -286,66 +302,66 @@ export const Flex: FunctionalComponent<FlexProps> = () => (
       </p>
       <ExampleContainer title=".fld-row.flai-stretch">
         <section class="pa-3 bwa-1 fld-row flg-3 flai-stretch" style="height: 100px;">
-          <div class="pa-3 bwa-1 fls-1-1">One</div>
-          <div class="pa-3 bwa-1 fls-1-1">Two</div>
-          <div class="pa-3 bwa-1 fls-1-1">Three</div>
-          <div class="pa-3 bwa-1 fls-1-1">Four</div>
+          <div class="pa-3 bwa-1 fls-1-1">.fls-1-1</div>
+          <div class="pa-3 bwa-1 fls-1-1">.fls-1-1</div>
+          <div class="pa-3 bwa-1 fls-1-1">.fls-1-1</div>
+          <div class="pa-3 bwa-1 fls-1-1">.fls-1-1</div>
         </section>
       </ExampleContainer>
       <ExampleContainer title=".fld-column.flai-stretch">
         <section class="pa-3 bwa-1 fld-column flg-3 flai-stretch">
-          <div class="pa-3 bwa-1 fls-1-1">One</div>
-          <div class="pa-3 bwa-1 fls-1-1">Two</div>
-          <div class="pa-3 bwa-1 fls-1-1">Three</div>
-          <div class="pa-3 bwa-1 fls-1-1">Four</div>
+          <div class="pa-3 bwa-1 fls-1-1">.fls-1-1</div>
+          <div class="pa-3 bwa-1 fls-1-1">.fls-1-1</div>
+          <div class="pa-3 bwa-1 fls-1-1">.fls-1-1</div>
+          <div class="pa-3 bwa-1 fls-1-1">.fls-1-1</div>
         </section>
       </ExampleContainer>
       <ExampleContainer title=".fld-row.flai-center">
         <section class="pa-3 bwa-1 fld-row flg-3 flai-center" style="height: 100px;">
-          <div class="pa-3 bwa-1 fls-1-1">One</div>
-          <div class="pa-3 bwa-1 fls-1-1">Two</div>
-          <div class="pa-3 bwa-1 fls-1-1">Three</div>
-          <div class="pa-3 bwa-1 fls-1-1">Four</div>
+          <div class="pa-3 bwa-1 fls-1-1">.fls-1-1</div>
+          <div class="pa-3 bwa-1 fls-1-1">.fls-1-1</div>
+          <div class="pa-3 bwa-1 fls-1-1">.fls-1-1</div>
+          <div class="pa-3 bwa-1 fls-1-1">.fls-1-1</div>
         </section>
       </ExampleContainer>
       <ExampleContainer title=".fld-column.flai-center">
         <section class="pa-3 bwa-1 fld-column flg-3 flai-center">
-          <div class="pa-3 bwa-1 fls-1-1">One</div>
-          <div class="pa-3 bwa-1 fls-1-1">Two</div>
-          <div class="pa-3 bwa-1 fls-1-1">Three</div>
-          <div class="pa-3 bwa-1 fls-1-1">Four</div>
+          <div class="pa-3 bwa-1 fls-1-1">.fls-1-1</div>
+          <div class="pa-3 bwa-1 fls-1-1">.fls-1-1</div>
+          <div class="pa-3 bwa-1 fls-1-1">.fls-1-1</div>
+          <div class="pa-3 bwa-1 fls-1-1">.fls-1-1</div>
         </section>
       </ExampleContainer>
       <ExampleContainer title=".fld-row.flai-flex-start">
         <section class="pa-3 bwa-1 fld-row flg-3 flai-flex-start" style="height: 100px;">
-          <div class="pa-3 bwa-1 fls-1-1">One</div>
-          <div class="pa-3 bwa-1 fls-1-1">Two</div>
-          <div class="pa-3 bwa-1 fls-1-1">Three</div>
-          <div class="pa-3 bwa-1 fls-1-1">Four</div>
+          <div class="pa-3 bwa-1 fls-1-1">.fls-1-1</div>
+          <div class="pa-3 bwa-1 fls-1-1">.fls-1-1</div>
+          <div class="pa-3 bwa-1 fls-1-1">.fls-1-1</div>
+          <div class="pa-3 bwa-1 fls-1-1">.fls-1-1</div>
         </section>
       </ExampleContainer>
       <ExampleContainer title=".fld-column.flai-flex-start">
         <section class="pa-3 bwa-1 fld-column flg-3 flai-flex-start">
-          <div class="pa-3 bwa-1 fls-1-1">One</div>
-          <div class="pa-3 bwa-1 fls-1-1">Two</div>
-          <div class="pa-3 bwa-1 fls-1-1">Three</div>
-          <div class="pa-3 bwa-1 fls-1-1">Four</div>
+          <div class="pa-3 bwa-1 fls-1-1">.fls-1-1</div>
+          <div class="pa-3 bwa-1 fls-1-1">.fls-1-1</div>
+          <div class="pa-3 bwa-1 fls-1-1">.fls-1-1</div>
+          <div class="pa-3 bwa-1 fls-1-1">.fls-1-1</div>
         </section>
       </ExampleContainer>
       <ExampleContainer title=".fld-row.flai-flex-end">
         <section class="pa-3 bwa-1 fld-row flg-3 flai-flex-end" style="height: 100px;">
-          <div class="pa-3 bwa-1 fls-1-1">One</div>
-          <div class="pa-3 bwa-1 fls-1-1">Two</div>
-          <div class="pa-3 bwa-1 fls-1-1">Three</div>
-          <div class="pa-3 bwa-1 fls-1-1">Four</div>
+          <div class="pa-3 bwa-1 fls-1-1">.fls-1-1</div>
+          <div class="pa-3 bwa-1 fls-1-1">.fls-1-1</div>
+          <div class="pa-3 bwa-1 fls-1-1">.fls-1-1</div>
+          <div class="pa-3 bwa-1 fls-1-1">.fls-1-1</div>
         </section>
       </ExampleContainer>
       <ExampleContainer title=".fld-column.flai-flex-end">
         <section class="pa-3 bwa-1 fld-column flg-3 flai-flex-end">
-          <div class="pa-3 bwa-1 fls-1-1">One</div>
-          <div class="pa-3 bwa-1 fls-1-1">Two</div>
-          <div class="pa-3 bwa-1 fls-1-1">Three</div>
-          <div class="pa-3 bwa-1 fls-1-1">Four</div>
+          <div class="pa-3 bwa-1 fls-1-1">.fls-1-1</div>
+          <div class="pa-3 bwa-1 fls-1-1">.fls-1-1</div>
+          <div class="pa-3 bwa-1 fls-1-1">.fls-1-1</div>
+          <div class="pa-3 bwa-1 fls-1-1">.fls-1-1</div>
         </section>
       </ExampleContainer>
     </SubSection>
@@ -357,115 +373,115 @@ export const Flex: FunctionalComponent<FlexProps> = () => (
         unset.
       </p>
       <ExampleContainer title=".fld-row.fljc-center">
-        <section class="pa-3 bwa-1 fld-row flg-3 fljc-center">
-          <div class="pa-3 bwa-1 fls-0-0">One</div>
-          <div class="pa-3 bwa-1 fls-0-0">Two</div>
-          <div class="pa-3 bwa-1 fls-0-0">Three</div>
-          <div class="pa-3 bwa-1 fls-0-0">Four</div>
+        <section class="pa-3 bwa-1 fld-row fljc-center">
+          <div class="pa-3 bwa-1 fls-0-0">.fls-0-0</div>
+          <div class="pa-3 bwa-1 fls-0-0">.fls-0-0</div>
+          <div class="pa-3 bwa-1 fls-0-0">.fls-0-0</div>
+          <div class="pa-3 bwa-1 fls-0-0">.fls-0-0</div>
         </section>
       </ExampleContainer>
       <ExampleContainer title=".fld-column.fljc-center">
-        <section class="pa-3 bwa-1 fld-column flg-3 fljc-center" style="height: 200px;">
-          <div class="pa-3 bwa-1 fls-0-0">One</div>
-          <div class="pa-3 bwa-1 fls-0-0">Two</div>
-          <div class="pa-3 bwa-1 fls-0-0">Three</div>
-          <div class="pa-3 bwa-1 fls-0-0">Four</div>
+        <section class="pa-3 bwa-1 fld-column fljc-center" style="height: 200px;">
+          <div class="pa-3 bwa-1 fls-0-0">.fls-0-0</div>
+          <div class="pa-3 bwa-1 fls-0-0">.fls-0-0</div>
+          <div class="pa-3 bwa-1 fls-0-0">.fls-0-0</div>
+          <div class="pa-3 bwa-1 fls-0-0">.fls-0-0</div>
         </section>
       </ExampleContainer>
       <ExampleContainer title=".fld-row.fljc-flex-start">
-        <section class="pa-3 bwa-1 fld-row flg-3 fljc-flex-start">
-          <div class="pa-3 bwa-1 fls-0-0">One</div>
-          <div class="pa-3 bwa-1 fls-0-0">Two</div>
-          <div class="pa-3 bwa-1 fls-0-0">Three</div>
-          <div class="pa-3 bwa-1 fls-0-0">Four</div>
+        <section class="pa-3 bwa-1 fld-row fljc-flex-start">
+          <div class="pa-3 bwa-1 fls-0-0">.fls-0-0</div>
+          <div class="pa-3 bwa-1 fls-0-0">.fls-0-0</div>
+          <div class="pa-3 bwa-1 fls-0-0">.fls-0-0</div>
+          <div class="pa-3 bwa-1 fls-0-0">.fls-0-0</div>
         </section>
       </ExampleContainer>
       <ExampleContainer title=".fld-column.fljc-flex-start">
-        <section class="pa-3 bwa-1 fld-column flg-3 fljc-flex-start" style="height: 200px;">
-          <div class="pa-3 bwa-1 fls-0-0">One</div>
-          <div class="pa-3 bwa-1 fls-0-0">Two</div>
-          <div class="pa-3 bwa-1 fls-0-0">Three</div>
-          <div class="pa-3 bwa-1 fls-0-0">Four</div>
+        <section class="pa-3 bwa-1 fld-column fljc-flex-start" style="height: 200px;">
+          <div class="pa-3 bwa-1 fls-0-0">.fls-0-0</div>
+          <div class="pa-3 bwa-1 fls-0-0">.fls-0-0</div>
+          <div class="pa-3 bwa-1 fls-0-0">.fls-0-0</div>
+          <div class="pa-3 bwa-1 fls-0-0">.fls-0-0</div>
         </section>
       </ExampleContainer>
       <ExampleContainer title=".fld-row.fljc-flex-end">
-        <section class="pa-3 bwa-1 fld-row flg-3 fljc-flex-end">
-          <div class="pa-3 bwa-1 fls-0-0">One</div>
-          <div class="pa-3 bwa-1 fls-0-0">Two</div>
-          <div class="pa-3 bwa-1 fls-0-0">Three</div>
-          <div class="pa-3 bwa-1 fls-0-0">Four</div>
+        <section class="pa-3 bwa-1 fld-row fljc-flex-end">
+          <div class="pa-3 bwa-1 fls-0-0">.fls-0-0</div>
+          <div class="pa-3 bwa-1 fls-0-0">.fls-0-0</div>
+          <div class="pa-3 bwa-1 fls-0-0">.fls-0-0</div>
+          <div class="pa-3 bwa-1 fls-0-0">.fls-0-0</div>
         </section>
       </ExampleContainer>
       <ExampleContainer title=".fld-column.fljc-flex-end">
-        <section class="pa-3 bwa-1 fld-column flg-3 fljc-flex-end" style="height: 200px;">
-          <div class="pa-3 bwa-1 fls-0-0">One</div>
-          <div class="pa-3 bwa-1 fls-0-0">Two</div>
-          <div class="pa-3 bwa-1 fls-0-0">Three</div>
-          <div class="pa-3 bwa-1 fls-0-0">Four</div>
+        <section class="pa-3 bwa-1 fld-column fljc-flex-end" style="height: 200px;">
+          <div class="pa-3 bwa-1 fls-0-0">.fls-0-0</div>
+          <div class="pa-3 bwa-1 fls-0-0">.fls-0-0</div>
+          <div class="pa-3 bwa-1 fls-0-0">.fls-0-0</div>
+          <div class="pa-3 bwa-1 fls-0-0">.fls-0-0</div>
         </section>
       </ExampleContainer>
       <ExampleContainer title=".fld-row.fljc-space-between">
-        <section class="pa-3 bwa-1 fld-row flg-3 fljc-space-between">
-          <div class="pa-3 bwa-1 fls-0-0">One</div>
-          <div class="pa-3 bwa-1 fls-0-0">Two</div>
-          <div class="pa-3 bwa-1 fls-0-0">Three</div>
-          <div class="pa-3 bwa-1 fls-0-0">Four</div>
+        <section class="pa-3 bwa-1 fld-row fljc-space-between">
+          <div class="pa-3 bwa-1 fls-0-0">.fls-0-0</div>
+          <div class="pa-3 bwa-1 fls-0-0">.fls-0-0</div>
+          <div class="pa-3 bwa-1 fls-0-0">.fls-0-0</div>
+          <div class="pa-3 bwa-1 fls-0-0">.fls-0-0</div>
         </section>
       </ExampleContainer>
       <ExampleContainer title=".fld-column.fljc-space-between">
-        <section class="pa-3 bwa-1 fld-column flg-3 fljc-space-between" style="height: 200px;">
-          <div class="pa-3 bwa-1 fls-0-0">One</div>
-          <div class="pa-3 bwa-1 fls-0-0">Two</div>
-          <div class="pa-3 bwa-1 fls-0-0">Three</div>
-          <div class="pa-3 bwa-1 fls-0-0">Four</div>
+        <section class="pa-3 bwa-1 fld-column fljc-space-between" style="height: 200px;">
+          <div class="pa-3 bwa-1 fls-0-0">.fls-0-0</div>
+          <div class="pa-3 bwa-1 fls-0-0">.fls-0-0</div>
+          <div class="pa-3 bwa-1 fls-0-0">.fls-0-0</div>
+          <div class="pa-3 bwa-1 fls-0-0">.fls-0-0</div>
         </section>
       </ExampleContainer>
       <ExampleContainer title=".fld-row.fljc-space-around">
-        <section class="pa-3 bwa-1 fld-row flg-3 fljc-space-around">
-          <div class="pa-3 bwa-1 fls-0-0">One</div>
-          <div class="pa-3 bwa-1 fls-0-0">Two</div>
-          <div class="pa-3 bwa-1 fls-0-0">Three</div>
-          <div class="pa-3 bwa-1 fls-0-0">Four</div>
+        <section class="pa-3 bwa-1 fld-row fljc-space-around">
+          <div class="pa-3 bwa-1 fls-0-0">.fls-0-0</div>
+          <div class="pa-3 bwa-1 fls-0-0">.fls-0-0</div>
+          <div class="pa-3 bwa-1 fls-0-0">.fls-0-0</div>
+          <div class="pa-3 bwa-1 fls-0-0">.fls-0-0</div>
         </section>
       </ExampleContainer>
       <ExampleContainer title=".fld-column.fljc-space-around">
-        <section class="pa-3 bwa-1 fld-column flg-3 fljc-space-around" style="height: 200px;">
-          <div class="pa-3 bwa-1 fls-0-0">One</div>
-          <div class="pa-3 bwa-1 fls-0-0">Two</div>
-          <div class="pa-3 bwa-1 fls-0-0">Three</div>
-          <div class="pa-3 bwa-1 fls-0-0">Four</div>
+        <section class="pa-3 bwa-1 fld-column fljc-space-around" style="height: 200px;">
+          <div class="pa-3 bwa-1 fls-0-0">.fls-0-0</div>
+          <div class="pa-3 bwa-1 fls-0-0">.fls-0-0</div>
+          <div class="pa-3 bwa-1 fls-0-0">.fls-0-0</div>
+          <div class="pa-3 bwa-1 fls-0-0">.fls-0-0</div>
         </section>
       </ExampleContainer>
       <ExampleContainer title=".fld-row.fljc-space-evenly">
-        <section class="pa-3 bwa-1 fld-row flg-3 fljc-space-evenly">
-          <div class="pa-3 bwa-1 fls-0-0">One</div>
-          <div class="pa-3 bwa-1 fls-0-0">Two</div>
-          <div class="pa-3 bwa-1 fls-0-0">Three</div>
-          <div class="pa-3 bwa-1 fls-0-0">Four</div>
+        <section class="pa-3 bwa-1 fld-row fljc-space-evenly">
+          <div class="pa-3 bwa-1 fls-0-0">.fls-0-0</div>
+          <div class="pa-3 bwa-1 fls-0-0">.fls-0-0</div>
+          <div class="pa-3 bwa-1 fls-0-0">.fls-0-0</div>
+          <div class="pa-3 bwa-1 fls-0-0">.fls-0-0</div>
         </section>
       </ExampleContainer>
       <ExampleContainer title=".fld-column.fljc-space-evenly">
-        <section class="pa-3 bwa-1 fld-column flg-3 fljc-space-evenly" style="height: 200px;">
-          <div class="pa-3 bwa-1 fls-0-0">One</div>
-          <div class="pa-3 bwa-1 fls-0-0">Two</div>
-          <div class="pa-3 bwa-1 fls-0-0">Three</div>
-          <div class="pa-3 bwa-1 fls-0-0">Four</div>
+        <section class="pa-3 bwa-1 fld-column fljc-space-evenly" style="height: 200px;">
+          <div class="pa-3 bwa-1 fls-0-0">.fls-0-0</div>
+          <div class="pa-3 bwa-1 fls-0-0">.fls-0-0</div>
+          <div class="pa-3 bwa-1 fls-0-0">.fls-0-0</div>
+          <div class="pa-3 bwa-1 fls-0-0">.fls-0-0</div>
         </section>
       </ExampleContainer>
-      <ExampleContainer title=".fld-row.fljc-stretch">
+      <ExampleContainer title=".fld-row.flg-3.fljc-stretch">
         <section class="pa-3 bwa-1 fld-row flg-3 fljc-stretch">
-          <div class="pa-3 bwa-1 fls-1-1">One</div>
-          <div class="pa-3 bwa-1 fls-1-1">Two</div>
-          <div class="pa-3 bwa-1 fls-1-1">Three</div>
-          <div class="pa-3 bwa-1 fls-1-1">Four</div>
+          <div class="pa-3 bwa-1 fls-1-1">.fls-1-1</div>
+          <div class="pa-3 bwa-1 fls-1-1">.fls-1-1</div>
+          <div class="pa-3 bwa-1 fls-1-1">.fls-1-1</div>
+          <div class="pa-3 bwa-1 fls-1-1">.fls-1-1</div>
         </section>
       </ExampleContainer>
-      <ExampleContainer title=".fld-column.fljc-stretch">
+      <ExampleContainer title=".fld-column.flg-3.fljc-stretch">
         <section class="pa-3 bwa-1 fld-column flg-3 fljc-stretch" style="height: 200px;">
-          <div class="pa-3 bwa-1 fls-1-1">One</div>
-          <div class="pa-3 bwa-1 fls-1-1">Two</div>
-          <div class="pa-3 bwa-1 fls-1-1">Three</div>
-          <div class="pa-3 bwa-1 fls-1-1">Four</div>
+          <div class="pa-3 bwa-1 fls-1-1">.fls-1-1</div>
+          <div class="pa-3 bwa-1 fls-1-1">.fls-1-1</div>
+          <div class="pa-3 bwa-1 fls-1-1">.fls-1-1</div>
+          <div class="pa-3 bwa-1 fls-1-1">.fls-1-1</div>
         </section>
       </ExampleContainer>
     </SubSection>
@@ -478,10 +494,10 @@ export const Flex: FunctionalComponent<FlexProps> = () => (
       </p>
       <ExampleContainer title=".fld-column.fld-sm-row">
         <section class="pa-3 bwa-1 fld-column fld-sm-row flg-3" style="min-height: 100px;">
-          <div class="pa-3 bwa-1 fls-1-1 flas-stretch">.flas-stretch</div>
-          <div class="pa-3 bwa-1 fls-1-1 flas-center">.flas-center</div>
-          <div class="pa-3 bwa-1 fls-1-1 flas-flex-start">.flas-flex-start</div>
-          <div class="pa-3 bwa-1 fls-1-1 flas-flex-end">.flas-flex-end</div>
+          <div class="pa-3 bwa-1 fls-1-1 flas-stretch">.fls-1-1.flas-stretch</div>
+          <div class="pa-3 bwa-1 fls-1-1 flas-center">.fls-1-1.flas-center</div>
+          <div class="pa-3 bwa-1 fls-1-1 flas-flex-start">.fls-1-1.flas-flex-start</div>
+          <div class="pa-3 bwa-1 fls-1-1 flas-flex-end">.fls-1-1.flas-flex-end</div>
         </section>
       </ExampleContainer>
     </SubSection>

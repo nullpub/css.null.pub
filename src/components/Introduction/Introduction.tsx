@@ -16,8 +16,11 @@ export const Introduction: FunctionalComponent<IntroductionProps> = () => (
     <p>
       <span class="fwu-2 pr-3">What is it?</span> This is <a href="https://github.com/nullpub/css">@nll/css</a>, a css
       utility library meant to be the building blocks for responsive and fast websites/apps that are easy to update and
-      maintain. @nll/css makes copious use of the following to achieve various effects:
+      maintain. It was designed and is maintained by <a href="https://github.com/baetheus">Brandon Blaylock</a>. If you
+      find any bugs, discrepancies, or places for improvement, please{' '}
+      <a href="https://github.com/nullpub/css/issues">submit an issue</a>.
     </p>
+    <p>@nll/css makes copious use of the following to achieve various effects:</p>
     <ul class="pl-4 fsd-1 fwd-1" style="list-style: circle inside;">
       <li>Atomic/functional CSS</li>
       <li>CSS Custom Properties</li>

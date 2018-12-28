@@ -74,6 +74,44 @@ export const Font: FunctionalComponent<FontProps> = () => (
         </section>
       </ExampleContainer>
     </SubSection>
+
+    <SubSection title="Font Family" subtitle=".ff">
+      <p>
+        Font family classes can be used to set the generic font family and utility classes. These keywords include
+        serif, sans-serif, monospace, cursive, fantasy, system-ui, inherit, initial, and unset.
+      </p>
+      <ExampleContainer title="Font Family Examples">
+        <section class="fld-column flg-3">
+          <p class="pa-2 bwa-1">
+            Serif : <span class="ff-serif">The quick brown fox jumped over the lazy dog.</span>
+          </p>
+          <p class="pa-2 bwa-1">
+            Sans-serif : <span class="ff-sans-serif">The quick brown fox jumped over the lazy dog.</span>
+          </p>
+          <p class="pa-2 bwa-1">
+            Monospace : <span class="ff-monospace">The quick brown fox jumped over the lazy dog.</span>
+          </p>
+          <p class="pa-2 bwa-1">
+            Cursive : <span class="ff-cursive">The quick brown fox jumped over the lazy dog.</span>
+          </p>
+          <p class="pa-2 bwa-1">
+            Fantasy : <span class="ff-fantasy">The quick brown fox jumped over the lazy dog.</span>
+          </p>
+          <p class="pa-2 bwa-1">
+            System-ui : <span class="ff-system-ui">The quick brown fox jumped over the lazy dog.</span>
+          </p>
+          <p class="pa-2 bwa-1">
+            Inherit : <span class="ff-inherit">The quick brown fox jumped over the lazy dog.</span>
+          </p>
+          <p class="pa-2 bwa-1">
+            Initial : <span class="ff-initial">The quick brown fox jumped over the lazy dog.</span>
+          </p>
+          <p class="pa-2 bwa-1">
+            Unset : <span class="ff-unset">The quick brown fox jumped over the lazy dog.</span>
+          </p>
+        </section>
+      </ExampleContainer>
+    </SubSection>
   </Section>
 );
 

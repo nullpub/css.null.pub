@@ -18,7 +18,7 @@ export const TableOfContents: FunctionalComponent<TableOfContentsProps> = () => 
         <a href="#Introduction">Introduction</a>
       </li>
       <li>
-        <a href="#Table Of Contents">Table Of Contents</a>
+        <a href="#TableOfContents">Table Of Contents</a>
       </li>
       <li>
         <a href="#Usage">Usage</a>
@@ -48,13 +48,7 @@ export const TableOfContents: FunctionalComponent<TableOfContentsProps> = () => 
         <a href="#Padding">Padding</a>
       </li>
       <li>
-        <a href="#Shadow">Shadow</a>
-      </li>
-      <li>
-        <a href="#Text">Text</a>
-      </li>
-      <li>
-        <a href="#To Do">To Do</a>
+        <a href="#Future">Future</a>
       </li>
     </ol>
   </Section>

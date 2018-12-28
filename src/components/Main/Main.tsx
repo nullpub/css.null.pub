@@ -7,16 +7,15 @@ import TableOfContents from '~/components/TableOfContents';
 import Usage from '~/components/Usage';
 import Reset from '~/components/Reset';
 import Variables from '~/components/Variables';
-import ToDo from '~/components/ToDo';
 import Border from '~/components/Border';
 import Color from '~/components/Color';
 import Flex from '~/components/Flex';
 import Font from '~/components/Font';
+import Margin from '~/components/Margin';
+import Padding from '~/components/Padding';
+import Future from '~/components/Future';
 
 /**
-<section>Font</section>
-<section>Margin</section>
-<section>Padding</section>
 <section>Shadow</section>
 <section>Text</section>
 <section>Display</section>
@@ -39,7 +38,9 @@ export const Main: FunctionalComponent<any> = () => (
     <Color />
     <Flex />
     <Font />
-    <ToDo />
+    <Margin />
+    <Padding />
+    <Future />
   </article>
 );
 

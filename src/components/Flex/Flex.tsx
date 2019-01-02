@@ -21,30 +21,14 @@ const FlexZeroRange = (count: number) => range(count).map(i => FlexZero(i + 1));
 const FlexOneRange = (count: number) => range(count).map(i => FlexOne(i + 1));
 
 const flexGaps = range(8).map(i => `flg-${i}`);
-const alignItems = [
-  'flai-stretch',
-  'flai-center',
-  'flai-flex-start',
-  'flai-flex-end',
-  'flai-baseline',
-  'flai-initial',
-  'flai-inherit',
-];
+const alignItems = ['flai-stretch', 'flai-center', 'flai-flex-start', 'flai-flex-end'];
 const justifyContent = [
   'fljc-center',
-  'fljc-start',
-  'fljc-end',
   'fljc-flex-start',
   'fljc-flex-end',
-  'fljc-left',
-  'fljc-right',
   'fljc-space-between',
   'fljc-space-around',
   'fljc-space-evenly',
-  'fljc-stretch',
-  'fljc-inherit',
-  'fljc-initial',
-  'fljc-unset',
 ];
 
 /**
@@ -128,16 +112,16 @@ export const Flex: FunctionalComponent<FlexProps> = () => (
     <SubSection title="Flex Direction" subtitle=".fld">
       <p>The flex direction classes set flex-direction and display: flex on the attached class.</p>
       <ExampleContainer title=".fld-row.flg-4">
-        <section class="fld-row flg-4">{FlexOneRange(4)}</section>
+        <section class="fld-row flg-4">{FlexOneRange(3)}</section>
       </ExampleContainer>
       <ExampleContainer title=".fld-row-reverse.flg-4">
-        <section class="fld-row-reverse flg-4">{FlexOneRange(4)}</section>
+        <section class="fld-row-reverse flg-4">{FlexOneRange(3)}</section>
       </ExampleContainer>
       <ExampleContainer title=".fld-column.flg-4">
-        <section class="fld-column flg-4">{FlexOneRange(4)}</section>
+        <section class="fld-column flg-4">{FlexOneRange(3)}</section>
       </ExampleContainer>
       <ExampleContainer title=".fld-column-reverse.flg-4">
-        <section class="fld-column-reverse flg-4">{FlexOneRange(4)}</section>
+        <section class="fld-column-reverse flg-4">{FlexOneRange(3)}</section>
       </ExampleContainer>
     </SubSection>
 
@@ -248,13 +232,13 @@ export const Flex: FunctionalComponent<FlexProps> = () => (
       {alignItems.map(ai => (
         <ExampleContainer title={`.fld-row.${ai}`}>
           <section class={`pa-3 bwa-1 fld-row flg-3 ${ai}`} style="height: 100px;">
-            {FlexOneRange(4)}
+            {FlexOneRange(3)}
           </section>
         </ExampleContainer>
       ))}
       {alignItems.map(ai => (
         <ExampleContainer title={`.fld-column.${ai}`}>
-          <section class={`pa-3 bwa-1 fld-column flg-3 ${ai}`}>{FlexOneRange(4)}</section>
+          <section class={`pa-3 bwa-1 fld-column flg-3 ${ai}`}>{FlexOneRange(3)}</section>
         </ExampleContainer>
       ))}
     </SubSection>
@@ -267,13 +251,13 @@ export const Flex: FunctionalComponent<FlexProps> = () => (
       </p>
       {justifyContent.map(jc => (
         <ExampleContainer title={`.fld-row.flg-3.${jc}`}>
-          <section class={`pa-3 bwa-1 fld-row flg-3 ${jc}`}>{FlexZeroRange(4)}</section>
+          <section class={`pa-3 bwa-1 fld-row flg-3 ${jc}`}>{FlexZeroRange(3)}</section>
         </ExampleContainer>
       ))}
       {justifyContent.map(jc => (
         <ExampleContainer title={`.fld-column.flg-3.${jc}`}>
           <section class={`pa-3 bwa-1 fld-column flg-3 ${jc}`} style="height: 200px;">
-            {FlexZeroRange(4)}
+            {FlexZeroRange(3)}
           </section>
         </ExampleContainer>
       ))}
@@ -286,7 +270,7 @@ export const Flex: FunctionalComponent<FlexProps> = () => (
         flex-end, self-start, self-end, left, right, baseline, inherit, initial, and unset.
       </p>
       <ExampleContainer title=".fld-column.fld-sm-row">
-        <section class="pa-3 bwa-1 fld-column fld-sm-row flg-3" style="min-height: 100px;">
+        <section class="pa-3 bwa-1 fld-column fld-sm-row flg-4" style="min-height: 100px;">
           <div class="pa-3 bwa-1 fls-1-1 flas-stretch">.fls-1-1.flas-stretch</div>
           <div class="pa-3 bwa-1 fls-1-1 flas-center">.fls-1-1.flas-center</div>
           <div class="pa-3 bwa-1 fls-1-1 flas-flex-start">.fls-1-1.flas-flex-start</div>

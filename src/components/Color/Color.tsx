@@ -24,7 +24,7 @@ export const Color: FunctionalComponent<ColorProps> = () => (
         {`--color-{theme}`}.
       </p>
       <ExampleContainer title="Color Theme Examples">
-        <section class="fld-column flg-3">
+        <section class="fld-column flg-4">
           <div class="pa-2 bwa-1 ct-base">.ct-base</div>
           <div class="pa-2 bwa-1 ct-light">.ct-light</div>
           <div class="pa-2 bwa-1 ct-dark">.ct-dark</div>
@@ -38,7 +38,7 @@ export const Color: FunctionalComponent<ColorProps> = () => (
         </section>
       </ExampleContainer>
       <ExampleContainer title="Color Theme Reverse Examples">
-        <section class="fld-column flg-3">
+        <section class="fld-column flg-4">
           <div class="pa-2 bwa-1 ctr-base">.ctr-base</div>
           <div class="pa-2 bwa-1 ctr-light">.ctr-light</div>
           <div class="pa-2 bwa-1 ctr-dark">.ctr-dark</div>
@@ -59,7 +59,7 @@ export const Color: FunctionalComponent<ColorProps> = () => (
         {`--color-{theme}`} variables and {`.cfr-{theme}`} pull from {`--color-{theme}-contrast`}.
       </p>
       <ExampleContainer title="Foreground Color Examples">
-        <section class="fld-column flg-3">
+        <section class="fld-column flg-4">
           <div class="pa-2 cb-base cf-base">.cf-base</div>
           <div class="pa-2 cb-base cf-light">.cf-light</div>
           <div class="pa-2 cb-base cf-dark">.cf-dark</div>
@@ -73,7 +73,7 @@ export const Color: FunctionalComponent<ColorProps> = () => (
         </section>
       </ExampleContainer>
       <ExampleContainer title="Foreground Reverse Color Examples">
-        <section class="fld-column flg-3">
+        <section class="fld-column flg-4">
           <div class="pa-2 cb-base cfr-base">.cfr-base</div>
           <div class="pa-2 cb-base cfr-light">.cfr-light</div>
           <div class="pa-2 cb-base cfr-dark">.cfr-dark</div>
@@ -94,7 +94,7 @@ export const Color: FunctionalComponent<ColorProps> = () => (
         {`--color-{theme}-contrast`} variables and {`.cbr-{theme}`} pull from {`--color-{theme}`}.
       </p>
       <ExampleContainer title="Background Color Examples">
-        <section class="fld-column flg-3">
+        <section class="fld-column flg-4">
           <div class="pa-2 cb-base">.cb-base</div>
           <div class="pa-2 ct-light">.cb-light</div>
           <div class="pa-2 ct-dark">.cb-dark</div>
@@ -108,7 +108,7 @@ export const Color: FunctionalComponent<ColorProps> = () => (
         </section>
       </ExampleContainer>
       <ExampleContainer title="Background Reverse Color Examples">
-        <section class="fld-column flg-3">
+        <section class="fld-column flg-4">
           <div class="pa-2 ctr-base">.cbr-base</div>
           <div class="pa-2 ctr-light">.cbr-light</div>
           <div class="pa-2 cbr-dark">.cbr-dark</div>
@@ -129,7 +129,7 @@ export const Color: FunctionalComponent<ColorProps> = () => (
         read-only, hover, and focus. This is primarily useful for naked form elements. Here is an example.
       </p>
       <ExampleContainer title="Color Hover Psuedoselector Examples">
-        <section class="fld-column flg-3">
+        <section class="fld-column flg-4">
           <div class="pa-2 bwa-1 ct-primary ctr-primary-hover">.ct-primary.ctr-primary-hover</div>
           <div class="pa-2 bwa-1 ct-secondary ctr-secondary-hover">.ct-secondary.ctr-secondary-hover</div>
           <div class="pa-2 bwa-1 ct-accent ctr-accent-hover">.ct-accent.ctr-accent-hover</div>

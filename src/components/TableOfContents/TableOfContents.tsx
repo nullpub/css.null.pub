@@ -13,7 +13,7 @@ export interface TableOfContentsProps {}
  */
 export const TableOfContents: FunctionalComponent<TableOfContentsProps> = () => (
   <Section title="Table of Contents" subtitle="">
-    <ol class="pl-2 fld-column flg-3" style="list-style: decimal inside;">
+    <ol class="pl-2 fld-column flg-4" style="list-style: decimal inside;">
       <li>
         <a href="#Introduction">Introduction</a>
       </li>

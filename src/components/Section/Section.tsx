@@ -14,7 +14,7 @@ export interface SectionProps {
  * <Section title="Title" subtitle="Subtitle" />
  */
 export const Section: FunctionalComponent<SectionProps> = ({ title, subtitle, children }) => (
-  <section id={title.replace(/\s+/g, '')}>
+  <section id={title.replace(/\s+/g, '')} class="section">
     <header class="fld-row flg-4 flai-flex-end px-4">
       <h2>{title}</h2>
       {!!subtitle && <small class="pb-2">{subtitle}</small>}

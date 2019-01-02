@@ -1,4 +1,4 @@
-import './polyfills';
+// import './polyfills';
 
 import { h, render } from 'preact';
 

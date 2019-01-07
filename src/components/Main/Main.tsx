@@ -15,6 +15,8 @@ import Margin from '~/components/Margin';
 import Padding from '~/components/Padding';
 import Future from '~/components/Future';
 
+import './Main.css';
+
 /**
 <section>Shadow</section>
 <section>Text</section>

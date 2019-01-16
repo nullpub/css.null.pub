@@ -1,22 +1,5 @@
-body {
-  font-family: 'Lato', sans-serif;
-  font-size: var(--font-size);
-}
+/* Vendor */
+@import 'vendor/nll.css';
 
-:root {
-  --size: 1rem;
-}
-
-/* Fluid size from medium to large (Be sure to update from --width variables) */
-@media (min-width: 800px) and (max-width: 1200px) {
-  :root {
-    --size: 1.1rem;
-  }
-}
-
-/* Size from large up */
-@media (min-width: 1200px) {
-  :root {
-    --size: 1.2rem;
-  }
-}
+/* Base */
+@import 'base/global.css';

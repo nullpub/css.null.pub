@@ -5,6 +5,21 @@ import Section from '~/components/Section';
 
 export interface TableOfContentsProps {}
 
+const links = [
+  { value: '#Introduction', label: 'Introduction' },
+  { value: '#TableOfContents', label: 'Table' },
+  { value: '#Usage', label: 'Usage' },
+  { value: '#Reset', label: 'Reset' },
+  { value: '#Variables', label: 'Variables' },
+  { value: '#Border', label: 'Border' },
+  { value: '#Color', label: 'Color' },
+  { value: '#Flex', label: 'Flex' },
+  { value: '#Font', label: 'Font' },
+  { value: '#Margin', label: 'Margin' },
+  { value: '#Padding', label: 'Padding' },
+  { value: '#Future', label: 'Future' },
+];
+
 /**
  * @render react
  * @name TableOfContents
@@ -14,42 +29,11 @@ export interface TableOfContentsProps {}
 export const TableOfContents: FunctionalComponent<TableOfContentsProps> = () => (
   <Section title="Table of Contents" subtitle="">
     <ol class="pl-2 fld-column flg-4" style="list-style: decimal inside;">
-      <li>
-        <a href="#Introduction">Introduction</a>
-      </li>
-      <li>
-        <a href="#TableOfContents">Table Of Contents</a>
-      </li>
-      <li>
-        <a href="#Usage">Usage</a>
-      </li>
-      <li>
-        <a href="#Reset">Reset</a>
-      </li>
-      <li>
-        <a href="#Variables">Variables</a>
-      </li>
-      <li>
-        <a href="#Border">Border</a>
-      </li>
-      <li>
-        <a href="#Color">Color</a>
-      </li>
-      <li>
-        <a href="#Flex">Flex</a>
-      </li>
-      <li>
-        <a href="#Font">Font</a>
-      </li>
-      <li>
-        <a href="#Margin">Margin</a>
-      </li>
-      <li>
-        <a href="#Padding">Padding</a>
-      </li>
-      <li>
-        <a href="#Future">Future</a>
-      </li>
+      {links.map(({ value, label }, i) => (
+        <li key={i}>
+          <a href={value}>{label}</a>
+        </li>
+      ))}
     </ol>
   </Section>
 );

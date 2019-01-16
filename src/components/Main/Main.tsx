@@ -1,7 +1,5 @@
 import { h, FunctionalComponent } from 'preact';
 
-import './Main.css';
-
 import Introduction from '~/components/Introduction';
 import TableOfContents from '~/components/TableOfContents';
 import Usage from '~/components/Usage';
@@ -14,14 +12,9 @@ import Font from '~/components/Font';
 import Margin from '~/components/Margin';
 import Padding from '~/components/Padding';
 import Future from '~/components/Future';
+import Header from '~/components/Header';
 
 import './Main.css';
-
-/**
-<section>Shadow</section>
-<section>Text</section>
-<section>Display</section>
- */
 
 /**
  * @render react
@@ -30,9 +23,10 @@ import './Main.css';
  * <Main text="Hello World" />
  */
 export const Main: FunctionalComponent<any> = () => (
-  <article class="main-page pa-4 fld-column flg-6 flai-center mb-20p">
-    <Introduction />
+  <article class="main-page fld-column flg-6 flai-center pa-4 mb-20p">
+    <Header title="css.null.pub" />
     <TableOfContents />
+    <Introduction />
     <Usage />
     <Reset />
     <Variables />

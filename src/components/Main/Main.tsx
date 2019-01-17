@@ -16,6 +16,8 @@ import Header from '~/components/Header';
 
 import './Main.css';
 
+// fld-column flg-6 flai-center
+
 /**
  * @render react
  * @name Main
@@ -23,7 +25,7 @@ import './Main.css';
  * <Main text="Hello World" />
  */
 export const Main: FunctionalComponent<any> = () => (
-  <article class="main-page fld-column flg-6 flai-center pa-4 mb-20p">
+  <article class="main-page pa-4 mb-20p">
     <Header title="css.null.pub" />
     <TableOfContents />
     <Introduction />

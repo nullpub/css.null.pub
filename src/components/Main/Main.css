@@ -1,4 +1,15 @@
 .main-page {
-  width: 100%;
-  max-width: 100%;
+  break-inside: avoid;
+}
+
+@media (min-width: 50em) and (max-width: 70em) {
+  .main-page {
+    column-count: 2;
+  }
+}
+
+@media (min-width: 70em) {
+  .main-page {
+    column-count: 3;
+  }
 }

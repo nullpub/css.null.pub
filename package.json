@@ -1,12 +1,13 @@
 {
   "name": "css.null.pub",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Documentation for @nll/css",
   "private": true,
   "scripts": {
     "c": "schematics @nll/schematics-preact:component",
     "p": "schematics @nll/schematics-preact:component --path=src/pages",
     "build": "NODE_ENV=production npx rollup -c",
+    "release": "npx standard-version",
     "start": "npx rollup -w -c",
     "test": "tsc --noEmit"
   },

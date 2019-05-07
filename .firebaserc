@@ -1,5 +1,14 @@
 {
   "projects": {
-    "default": "css-null-pub"
+    "nll-css": "nll-sh"
+  },
+  "targets": {
+    "nll-sh": {
+      "hosting": {
+        "nll-css": [
+          "nll-css"
+        ]
+      }
+    }
   }
 }

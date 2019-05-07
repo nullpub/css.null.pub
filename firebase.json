@@ -1,7 +1,7 @@
 {
   "hosting": {
-    "predeploy": ["pnpm i", "pnpm run build"],
     "public": "dist",
+    "target": "nll-css",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [
       {
